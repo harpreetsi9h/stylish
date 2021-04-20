@@ -1,0 +1,71 @@
+<div class="container-fluid">
+    <div class="row justify-content-md-center">
+        <div class="col-lg-10">
+            <div class=" card">
+                <div class="card-body">
+
+                    <div class="container2">
+                        <table class="table table-fixed">
+                            <thead class="text-muted" style="position: sticky;top: 0">
+                                <tr class="small text-uppercase">
+                                    <th scope="col" colspan="5">
+                                        <h5>Products List</h5>
+                                    </th>
+                                    <th scope="col"> <a class="btn btn-info btn-round" data-abc="true" routerLink="/product">
+                                            Add New</a></th>
+                                </tr>
+                                <tr class="small text-uppercase">
+                                    <th scope="col">Title</th>
+                                    <th scope="col">Category</th>
+                                    <th scope="col">Price</th>
+                                    <th scope="col">Rating</th>
+                                    <th scope="col">Edit</th>
+                                    <th scope="col">Delete</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let item of products; index as i">
+                                    <td>
+                                        <figure class="itemside align-items-center">
+                                            <div class="aside">
+                                                <img src="{{ item.image }}" class="img-sm" />
+                                            </div>
+                                            <figcaption class="info">
+                                                <a href="#" class="title text-dark" data-abc="true">{{
+                                                    item.name
+                                                    }}</a>
+                                            </figcaption>
+                                        </figure>
+                                    </td>
+                                    <td>
+                                        <div class="price-wrap">
+                                            <var class="price">{{item.category}}</var>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="price-wrap">
+                                            <var class="price">${{ (item.price).toFixed(2) }}</var>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="price-wrap">
+                                            <var class="price">{{ item.rating }}</var>
+                                        </div>
+                                    </td>
+                                    <td class="">
+                                        <a class="btn btn-info btn-round" data-abc="true" [routerLink]="'/product/'+item._id">
+                                            Edit</a>
+                                    </td>
+                                    <td class="">
+                                        <a href="" class="btn btn-light btn-round" data-abc="true" (click)="deleteItem($event, item._id)">
+                                            Delete</a>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

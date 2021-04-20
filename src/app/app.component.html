@@ -1,0 +1,123 @@
+<!-- nav -->
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous">
+<div class="row" style="width: 100%;background: #fa3434;margin-right: 0px !important;margin-left: 0px !important;">
+    <div class="col-md-6 mob1"><img src="assets/logo.png" alt="logo" style="width: 100px;margin-top: 10px;margin-left: 15px;"></div>
+    <div class="col-md-6 mob2">
+        <div class="navbar-nav ml-auto active" style="
+        display: -webkit-inline-box;
+        margin-top: 10px;float: right;
+    margin-right: 4%;
+    " *ngIf="!currentUser">
+            <a href="#" style="color: #ffff;font-size: 22px;margin-right: 10px;margin-top:   ;"><i class="fas fa-cart-arrow-down"></i></a>
+            <a class="nav-link" routerLink="/register" style="
+            color: #fff;
+            font-size: 17px;
+            font-weight: bold;
+            width: 50%;
+        ">Register</a><a class="nav-link" routerLink="/login" style="border-radius: 50px;color: #fff;font-size: 17px;font-weight: bold;padding: 6px;width: 60px;border: 2px solid #FFF;">Login</a>
+        </div>
+        <a href="#" *ngIf="currentUser" style="color: #ffff;font-size: 22px;margin-right: 20px;float: right;margin-top: 10px;"><i class="fas fa-cart-arrow-down"></i></a><a class="nav-link" *ngIf="currentUser" (click)="logout()" style="border-radius: 50px;color: #fff;font-size: 15px;font-weight: bold;padding: 6px;width: 66px;border: 2px solid #FFF;float: right;margin-right: 1%;margin-top: 10px;">Logout</a>
+
+    </div>
+</div>
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#"></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent" *ngIf="currentUser">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active" *ngIf="currentUser.username != 'admin'">
+                <a class="nav-link" routerLink="/">Home</a>
+            </li>
+
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Categories
+          </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" routerLink="/men">Men</a>
+                    <a class="dropdown-item" routerLink="/women">Women</a>
+                    <div class="dropdown-divider"></div>
+                </div>
+            </li>
+            <li class="nav-item active" *ngIf="currentUser.username == 'admin'">
+                <a class="nav-item nav-link" routerLink="/profileadmin">Profile</a>
+            </li>
+            <li class="nav-item active" *ngIf="currentUser.username == 'admin'">
+                <a class="nav-item nav-link" routerLink="/product">Product</a>
+            </li>
+            <li class="nav-item active" *ngIf="currentUser.username == 'admin'">
+                <a class="nav-item nav-link" routerLink="/product-list">Manage Product</a>
+            </li>
+            <li class="nav-item active" *ngIf="currentUser.username != 'admin'">
+                <a class="nav-link" routerLink="/account">Profile </a>
+            </li>
+            <li class="nav-item active" *ngIf="currentUser.username != 'admin'">
+                <a class="nav-link" routerLink="/cart">Cart </a>
+            </li>
+            <li class="nav-item active" *ngIf="currentUser.username != 'admin'">
+                <a class="nav-link" routerLink="/about">About </a>
+            </li>
+            <li class="nav-item active" *ngIf="currentUser.username != 'admin'">
+                <a class="nav-link" routerLink="/contact">Contact </a>
+            </li>
+
+        </ul>
+    </div>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent" *ngIf="!currentUser">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" routerLink="/">Home</a>
+            </li>
+
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Categories
+          </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" routerLink="/men">Men</a>
+                    <a class="dropdown-item" routerLink="/women">Women</a>
+                </div>
+            </li>
+
+            <li class="nav-item active">
+                <a class="nav-link" routerLink="/about">About </a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" routerLink="/contact">Contact </a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" routerLink="/login">Admin</a>
+            </li>
+
+        </ul>
+    </div>
+</nav>
+
+
+<!-- main app container -->
+<div class="main-app">
+    <div class="container">
+
+        <!-- <div class="col-sm-6 offset-sm-3"> -->
+        <alert></alert>
+        <router-outlet></router-outlet>
+        <!-- </div> -->
+
+    </div>
+</div>
+<!-- Footer -->
+<footer class="bg-light text-center text-lg-start">
+    <!-- Grid container -->
+
+    <!-- Copyright -->
+    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2)">
+        © 2021 Copyright
+
+    </div>
+    <!-- Copyright -->
+</footer>
+<!-- Footer -->

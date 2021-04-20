@@ -1,0 +1,165 @@
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous">
+<div class="container-fluid">
+    <div *ngIf="Items?.length > 0">
+        <form [formGroup]="checkoutForm" (ngSubmit)="submitOrder()">
+            <div class="row">
+                <aside class="col-lg-8">
+                    <div class="card">
+                        <div class="card-body">
+
+                            <h5 class="card-title">Delivery
+                                <Address></Address>
+                            </h5>
+                            <div class="form-group">
+                                <label for="person">Receiver Name</label>
+                                <input type="text" formControlName="person" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.person.errors }" />
+                                <div *ngIf="submitted && f.person.errors" class="invalid-feedback">
+                                    <div *ngIf="f.person.errors.required">Receiver Name is required</div>
+                                </div>
+                            </div>
+
+
+                            <div class="form-group">
+                                <label for="address">Address</label>
+                                <input type="text" formControlName="address" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.address.errors }" />
+                                <div *ngIf="submitted && f.address.errors" class="invalid-feedback">
+                                    <div *ngIf="f.address.errors.required">Address is required</div>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="city">City</label>
+                                <input type="text" formControlName="city" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.city.errors }" />
+                                <div *ngIf="submitted && f.city.errors" class="invalid-feedback">
+                                    <div *ngIf="f.city.errors.required">City is required</div>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="pincode">Pincode</label>
+                                <input type="text" formControlName="pincode" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.pincode.errors }" />
+                                <div *ngIf="submitted && f.pincode.errors" class="invalid-feedback">
+                                    <div *ngIf="f.pincode.errors.required">Pincode is required</div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="note">Note</label>
+                                <input type="text" formControlName="note" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.note.errors }" />
+                                <div *ngIf="submitted && f.note.errors" class="invalid-feedback">
+                                    <div *ngIf="f.note.errors.required">Note is required</div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </aside>
+                <aside class="col-lg-4">
+                    <div class="card">
+                        <div class="card-body">
+
+                            <dl class="dlist-align">
+                                <dt>Total Items:</dt>
+                                <dd class="text-right text-dark b ml-3">
+                                    <strong>{{ TotalItems }}</strong>
+                                </dd>
+                            </dl>
+                            <dl class="dlist-align">
+                                <dt>Total Amount:</dt>
+                                <dd class="text-right text-dark b ml-3">
+                                    <strong>${{ Ordertotal.toFixed(2) }}</strong>
+                                </dd>
+                            </dl>
+                            <hr />
+                            <button class="btn btn-out btn-primary btn-square btn-main" data-abc="true">
+                  Make Purchase
+                </button>
+                        </div>
+                    </div>
+                </aside>
+            </div>
+        </form>
+    </div>
+    <div *ngIf="Items?.length < 1">
+        <div class="card">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-lg-8">
+                        <p>Please Add products to cart first</p>
+                    </div>
+                    <div class="col-lg-4">
+                        <a routerLink="/" class="btn btn-out btn-success btn-square btn-main mt-2">Go To
+                Shopping</a>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- ========================= FOOTER ========================= -->
+<footer class="section-footer border-top bg">
+    <div class="container">
+        <section class="footer-top padding-y">
+            <div class="row">
+                <aside class="col-md col-6">
+                    <h6 class="title">Brands</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="#">Adidas</a></li>
+                        <li><a href="#">Puma</a></li>
+                        <li><a href="#">Reebok</a></li>
+                        <li><a href="#">Nike</a></li>
+                    </ul>
+                </aside>
+                <aside class="col-md col-6">
+                    <h6 class="title">Company</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="#">About us</a></li>
+                        <li><a href="#">Career</a></li>
+                        <li><a href="#">Find a store</a></li>
+                        <li><a href="#">Rules and terms</a></li>
+                        <li><a href="#">Sitemap</a></li>
+                    </ul>
+                </aside>
+                <aside class="col-md col-6">
+                    <h6 class="title">Help</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="#">Contact us</a></li>
+                        <li><a href="#">Money refund</a></li>
+                        <li><a href="#">Order status</a></li>
+                        <li><a href="#">Shipping info</a></li>
+                        <li><a href="#">Open dispute</a></li>
+                    </ul>
+                </aside>
+                <aside class="col-md col-6">
+                    <h6 class="title">Account</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="#"> User Login </a></li>
+                        <li><a href="#"> User register </a></li>
+                        <li><a href="#"> Account Setting </a></li>
+                        <li><a href="#"> My Orders </a></li>
+                    </ul>
+                </aside>
+                <aside class="col-md">
+                    <h6 class="title">Social</h6>
+                    <ul class="list-unstyled">
+                        <li>
+                            <a href="#"> <i class="fab fa-facebook"></i> Facebook </a>
+                        </li>
+                        <li>
+                            <a href="#"> <i class="fab fa-twitter"></i> Twitter </a>
+                        </li>
+                        <li>
+                            <a href="#"> <i class="fab fa-instagram"></i> Instagram </a>
+                        </li>
+                        <li>
+                            <a href="#"> <i class="fab fa-youtube"></i> Youtube </a>
+                        </li>
+                    </ul>
+                </aside>
+            </div>
+            <!-- row.// -->
+        </section>
+        <!-- footer-top.// -->
+    </div>
+    <!-- //container -->
+</footer>

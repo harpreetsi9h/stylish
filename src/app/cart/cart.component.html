@@ -1,0 +1,134 @@
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous">
+<div class="container-fluid">
+    <div class="row">
+        <aside class="col-lg-9">
+            <div class="card">
+                <div class="table-responsive">
+                    <table class="table table-borderless table-shopping-cart">
+                        <thead class="text-muted">
+                            <tr class="small text-uppercase">
+                                <th scope="col">Product</th>
+                                <th scope="col" width="120">Quantity</th>
+                                <th scope="col" width="120">Price</th>
+                                <th scope="col" class="text-right d-none d-md-block" width="200"></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let item of Items; index as i">
+                                <td>
+                                    <figure class="itemside align-items-center">
+                                        <div class="aside">
+                                            <img src="{{ item.image }}" class="img-sm" />
+                                        </div>
+                                        <figcaption class="info">
+                                            <a href="#" class="title text-dark" data-abc="true">{{
+                          item.name
+                          }}</a>
+                                        </figcaption>
+                                    </figure>
+                                </td>
+                                <td>
+                                    <input type="number" class="form-control" min="1" value="{{ item.qty }}" (change)="updateItem($event, i)" />
+                                </td>
+                                <td>
+                                    <div class="price-wrap">
+                                        <var class="price">${{ (item.price * item.qty).toFixed(2) }}</var>
+                                        <small class="text-muted"> ${{ item.price }} each </small>
+                                    </div>
+                                </td>
+                                <td class="text-right d-none d-md-block">
+                                    <a href="" class="btn btn-light btn-round" data-abc="true" (click)="deleteItem($event, item._id)">
+                      Remove</a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </aside>
+        <aside class="col-lg-3">
+            <div class="card">
+                <div class="card-body">
+                    <dl class="dlist-align">
+                        <dt>Total:</dt>
+                        <dd class="text-right text-dark b ml-3">
+                            <strong>${{ Ordertotal.toFixed(2) }}</strong>
+                        </dd>
+                    </dl>
+                    <hr />
+                    <a routerLink="/checkout" class="btn btn-out btn-primary btn-square btn-main" data-abc="true">
+              Go To Checkout
+            </a>
+                    <a routerLink="/" class="btn btn-out btn-success btn-square btn-main mt-2" data-abc="true">Continue Shopping</a>
+                </div>
+            </div>
+        </aside>
+    </div>
+</div>
+<!-- ========================= FOOTER ========================= -->
+<footer class="section-footer border-top bg">
+    <div class="container">
+        <section class="footer-top padding-y">
+            <div class="row">
+                <aside class="col-md col-6">
+                    <h6 class="title">Brands</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="#">Adidas</a></li>
+                        <li><a href="#">Puma</a></li>
+                        <li><a href="#">Reebok</a></li>
+                        <li><a href="#">Nike</a></li>
+                    </ul>
+                </aside>
+                <aside class="col-md col-6">
+                    <h6 class="title">Company</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="#">About us</a></li>
+                        <li><a href="#">Career</a></li>
+                        <li><a href="#">Find a store</a></li>
+                        <li><a href="#">Rules and terms</a></li>
+                        <li><a href="#">Sitemap</a></li>
+                    </ul>
+                </aside>
+                <aside class="col-md col-6">
+                    <h6 class="title">Help</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="#">Contact us</a></li>
+                        <li><a href="#">Money refund</a></li>
+                        <li><a href="#">Order status</a></li>
+                        <li><a href="#">Shipping info</a></li>
+                        <li><a href="#">Open dispute</a></li>
+                    </ul>
+                </aside>
+                <aside class="col-md col-6">
+                    <h6 class="title">Account</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="#"> User Login </a></li>
+                        <li><a href="#"> User register </a></li>
+                        <li><a href="#"> Account Setting </a></li>
+                        <li><a href="#"> My Orders </a></li>
+                    </ul>
+                </aside>
+                <aside class="col-md">
+                    <h6 class="title">Social</h6>
+                    <ul class="list-unstyled">
+                        <li>
+                            <a href="#"> <i class="fab fa-facebook"></i> Facebook </a>
+                        </li>
+                        <li>
+                            <a href="#"> <i class="fab fa-twitter"></i> Twitter </a>
+                        </li>
+                        <li>
+                            <a href="#"> <i class="fab fa-instagram"></i> Instagram </a>
+                        </li>
+                        <li>
+                            <a href="#"> <i class="fab fa-youtube"></i> Youtube </a>
+                        </li>
+                    </ul>
+                </aside>
+            </div>
+            <!-- row.// -->
+        </section>
+        <!-- footer-top.// -->
+    </div>
+    <!-- //container -->
+</footer>

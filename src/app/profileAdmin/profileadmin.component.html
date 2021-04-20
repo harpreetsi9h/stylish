@@ -1,0 +1,117 @@
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous">
+
+<div class="row" style="margin-left: 0px !important;margin-right: 0px !important;">
+    <div class="col-md-2 mt-4 mb-4">
+        <img alt="logo" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS52y5aInsxSm31CvHOFHWujqUx_wWTS9iM6s7BAm21oEN_RiGoog" style="height: 150px;width: 150px;border-radius: 100px;">
+    </div>
+    <div class="col-md-6 mt-5">
+        <h4 style="margin-top: 40px;">Hi {{ currentUser.username }}!</h4>
+        <!--- <button type="button" class="btn btn-primary">READ MORE</button>-->
+    </div>
+
+</div>
+<div class="row" style="margin-left: 0px !important;margin-right: 0px !important;">
+    <div class="col-md-3 mt-4 mb-4 side">
+        <div class="profile-work">
+            <a href="/profileadmin"><i class="fa fa-user" aria-hidden="true"></i> <b>Profile</b></a><br/><br/>
+            <a href="/profileadmin"><i class="fa fa-cogs" aria-hidden="true"></i><b>Setting</b></a><br/><br/>
+            <a href="/profileadmin"><i class="fa fa-tasks" aria-hidden="true"></i><b>Task</b></a><br/><br/>
+        </div>
+    </div>
+    <div class="col-md-8 mt-4 ctm-mn">
+        <div class="row">
+            <div class="col-md-2">
+                <label>User Id</label>
+            </div>
+            <div class="col-md-2">
+                <p>{{ currentUser._id }}</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-2">
+                <label>Name</label>
+            </div>
+            <div class="col-md-2">
+                <p>{{ currentUser.firstName }}</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-2">
+                <label>Email</label>
+            </div>
+            <div class="col-md-2">
+                <p>{{ currentUser.email }}</p>
+            </div>
+        </div>
+
+
+    </div>
+</div>
+
+<!-- ========================= FOOTER ========================= -->
+<footer class="section-footer border-top bg">
+    <div class="container">
+        <section class="footer-top padding-y">
+            <div class="row">
+                <aside class="col-md col-6">
+                    <h6 class="title">Brands</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="#">Adidas</a></li>
+                        <li><a href="#">Puma</a></li>
+                        <li><a href="#">Reebok</a></li>
+                        <li><a href="#">Nike</a></li>
+                    </ul>
+                </aside>
+                <aside class="col-md col-6">
+                    <h6 class="title">Company</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="#">About us</a></li>
+                        <li><a href="#">Career</a></li>
+                        <li><a href="#">Find a store</a></li>
+                        <li><a href="#">Rules and terms</a></li>
+                        <li><a href="#">Sitemap</a></li>
+                    </ul>
+                </aside>
+                <aside class="col-md col-6">
+                    <h6 class="title">Help</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="#">Contact us</a></li>
+                        <li><a href="#">Money refund</a></li>
+                        <li><a href="#">Order status</a></li>
+                        <li><a href="#">Shipping info</a></li>
+                        <li><a href="#">Open dispute</a></li>
+                    </ul>
+                </aside>
+                <aside class="col-md col-6">
+                    <h6 class="title">Account</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="#"> User Login </a></li>
+                        <li><a href="#"> User register </a></li>
+                        <li><a href="#"> Account Setting </a></li>
+                        <li><a href="#"> My Orders </a></li>
+                    </ul>
+                </aside>
+                <aside class="col-md">
+                    <h6 class="title">Social</h6>
+                    <ul class="list-unstyled">
+                        <li>
+                            <a href="#"> <i class="fab fa-facebook"></i> Facebook </a>
+                        </li>
+                        <li>
+                            <a href="#"> <i class="fab fa-twitter"></i> Twitter </a>
+                        </li>
+                        <li>
+                            <a href="#"> <i class="fab fa-instagram"></i> Instagram </a>
+                        </li>
+                        <li>
+                            <a href="#"> <i class="fab fa-youtube"></i> Youtube </a>
+                        </li>
+                    </ul>
+                </aside>
+            </div>
+            <!-- row.// -->
+        </section>
+        <!-- footer-top.// -->
+    </div>
+    <!-- //container -->
+</footer>

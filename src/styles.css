@@ -1,0 +1,58 @@
+.jumbotron.main-app {
+    /* height: 80vh; */
+    margin-bottom: 0px !important;
+}
+
+.jumbotron {
+    padding: 0rem 2rem;
+}
+
+.col-md.my-class {
+    background: white;
+    text-align: center;
+    padding: 59px 13px;
+    border-radius: 15px;
+    box-shadow: 0 0 15px grey;
+}
+
+#navbarDropdownMenuLink1 {
+    color: #000;
+}
+
+.row.gallry-box div {
+    height: 100px;
+    width: 100px;
+}
+
+.row.gallry-box {
+    display: flex;
+    justify-content: space-around;
+}
+
+.navbar-dark .navbar-nav .nav-link {
+    color: #fff;
+    font-size: 17px;
+    font-weight: bold;
+}
+
+.container {
+    max-width: 100%;
+    width: 100%;
+    padding-right: 10px;
+    padding-left: 6px;
+    margin-right: 0px !important;
+    margin-left: 0px !important;
+}
+
+.ctm-m {
+    padding: 60px;
+}
+
+@media (min-width: 320px) and (max-width: 767px) {
+    .mob1 {
+        width: 49%;
+    }
+    .mob2 {
+        width: 49%;
+    }
+}
