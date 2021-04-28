@@ -21,12 +21,13 @@ import { RegisterComponent } from "./register";
 import { WomenComponent } from "./women";
 import { MenComponent } from "./men";
 import { ProductComponent } from "./product";
-import { ProfileadminComponent } from "./profileadmin";
+import { ProfileadminComponent } from "./profileAdmin";
 import { ProductListComponent } from "./product-list";
 import { AboutComponent } from "./about";
 import { CardinfoComponent } from "./cardinfo";
 
 import { AlertComponent } from "./_components";
+import { HeaderComponent } from "./_header";
 
 @NgModule({
   imports: [
@@ -47,6 +48,7 @@ import { AlertComponent } from "./_components";
     CardinfoComponent,
     RegisterComponent,
     AlertComponent,
+    HeaderComponent,
     WomenComponent,
     MenComponent,
     ContactComponent,
