@@ -15,7 +15,7 @@ export class Home2Component implements OnInit {
   constructor(private userService: UserService) {
 
   }
-  cartItems = [];
+  cartItems = localStorage.getItem('cart') ? JSON.parse(localStorage.getItem('cart')) :[];
 
   ngOnInit() {
     this.loadProducts();

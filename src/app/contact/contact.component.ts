@@ -36,13 +36,17 @@ export class ContactComponent implements OnInit {
 get f() { return this.contactForm.controls; }
 
 onSubmit() {
+    console.log("ckjsdfksjd");
+    alert("Contact Form Submit successful")
+    window.location.reload();
     this.submitted = true;
 
     // stop here if form is invalid
     if (this.contactForm.invalid) {
         return;
     }
-
-    this.alertService.success('Contact Form Submit successful', true);
+    
+    //alert("Contact Form Submit successful")
+    //this.alertService.success('Contact Form Submit successful', true);
 }
 }

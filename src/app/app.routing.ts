@@ -15,7 +15,7 @@ import { ProductListComponent } from './product-list';
 import { AboutComponent } from './about';
 import { ContactComponent } from './contact';
 import { CardinfoComponent } from './cardinfo';
-import { ProfileadminComponent } from './profileadmin';
+import { ProfileadminComponent } from './profileAdmin';
 import { AuthGuard } from './_helpers';
 
 const routes: Routes = [

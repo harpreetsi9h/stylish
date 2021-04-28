@@ -1,5 +1,53 @@
 <!-- nav -->
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous">
+<style>
+    .dropbtn {
+        background-color: #4CAF50;
+        color: white;
+        padding: 16px;
+        font-size: 16px;
+        border: none;
+    }
+    
+    button.dropbtn {
+        background-color: #e4e4e4 !important;
+        padding: 5px !important;
+        color: #333 !important;
+    }
+    
+    .dropdown {
+        position: relative;
+        display: inline-block;
+    }
+    
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #f1f1f1;
+        min-width: 160px;
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+        z-index: 1;
+    }
+    
+    .dropdown-content a {
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+    }
+    
+    .dropdown-content a:hover {
+        background-color: #ddd;
+    }
+    
+    .dropdown:hover .dropdown-content {
+        display: block;
+    }
+    
+    .dropdown:hover .dropbtn {
+        background-color: #3e8e41;
+    }
+</style>
 <div class="row" style="width: 100%;background: #fa3434;margin-right: 0px !important;margin-left: 0px !important;">
     <div class="col-md-6 mob1"><img src="assets/logo.png" alt="logo" style="width: 100px;margin-top: 10px;margin-left: 15px;"></div>
     <div class="col-md-6 mob2">
@@ -8,7 +56,7 @@
         margin-top: 10px;float: right;
     margin-right: 4%;
     " *ngIf="!currentUser">
-            <a href="#" style="color: #ffff;font-size: 22px;margin-right: 10px;margin-top:   ;"><i class="fas fa-cart-arrow-down"></i></a>
+            <a href="/cart" style="color: #ffff;font-size: 22px;margin-right: 10px;margin-top:   ;"><i class="fas fa-cart-arrow-down"></i> <cartCount></cartCount></a>
             <a class="nav-link" routerLink="/register" style="
             color: #fff;
             font-size: 17px;
@@ -16,7 +64,8 @@
             width: 50%;
         ">Register</a><a class="nav-link" routerLink="/login" style="border-radius: 50px;color: #fff;font-size: 17px;font-weight: bold;padding: 6px;width: 60px;border: 2px solid #FFF;">Login</a>
         </div>
-        <a href="#" *ngIf="currentUser" style="color: #ffff;font-size: 22px;margin-right: 20px;float: right;margin-top: 10px;"><i class="fas fa-cart-arrow-down"></i></a><a class="nav-link" *ngIf="currentUser" (click)="logout()" style="border-radius: 50px;color: #fff;font-size: 15px;font-weight: bold;padding: 6px;width: 66px;border: 2px solid #FFF;float: right;margin-right: 1%;margin-top: 10px;">Logout</a>
+        <a href="/cart" *ngIf="currentUser" style="color: #ffff;font-size: 22px;margin-right: 20px;float: right;margin-top: 10px;"><i class="fas fa-cart-arrow-down"></i><cartCount></cartCount></a><a class="nav-link" *ngIf="currentUser" (click)="logout()"
+            style="border-radius: 50px;color: #fff;font-size: 15px;font-weight: bold;padding: 6px;width: 66px;border: 2px solid #FFF;float: right;margin-right: 1%;margin-top: 10px;">Logout</a>
 
     </div>
 </div>
@@ -33,19 +82,28 @@
                 <a class="nav-link" routerLink="/">Home</a>
             </li>
 
-            <li class="nav-item dropdown">
+            <!--li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             Categories
           </a>
+
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                     <a class="dropdown-item" routerLink="/men">Men</a>
                     <a class="dropdown-item" routerLink="/women">Women</a>
                     <div class="dropdown-divider"></div>
                 </div>
-            </li>
+            </li-->
+
             <li class="nav-item active" *ngIf="currentUser.username == 'admin'">
                 <a class="nav-item nav-link" routerLink="/profileadmin">Profile</a>
             </li>
+            <div class="dropdown">
+                <button class="dropbtn dropdown-toggle">Categories</button>
+                <div class="dropdown-content">
+                    <a class="dropdown-item" routerLink="/men">Men</a>
+                    <a class="dropdown-item" routerLink="/women">Women</a>
+                </div>
+            </div>
             <li class="nav-item active" *ngIf="currentUser.username == 'admin'">
                 <a class="nav-item nav-link" routerLink="/product">Product</a>
             </li>
@@ -73,7 +131,7 @@
                 <a class="nav-link" routerLink="/">Home</a>
             </li>
 
-            <li class="nav-item dropdown">
+            <!--li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             Categories
           </a>
@@ -81,8 +139,14 @@
                     <a class="dropdown-item" routerLink="/men">Men</a>
                     <a class="dropdown-item" routerLink="/women">Women</a>
                 </div>
-            </li>
-
+            </li!-->
+            <div class="dropdown">
+                <button class="dropbtn dropdown-toggle">Categories</button>
+                <div class="dropdown-content">
+                    <a class="dropdown-item" routerLink="/men">Men</a>
+                    <a class="dropdown-item" routerLink="/women">Women</a>
+                </div>
+            </div>
             <li class="nav-item active">
                 <a class="nav-link" routerLink="/about">About </a>
             </li>

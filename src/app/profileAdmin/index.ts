@@ -1,1 +1,1 @@
-export * from './Profileadmin.component';
+export * from './profileadmin.component';
